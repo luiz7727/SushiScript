@@ -1,10 +1,7 @@
-import Head from "next/head";
-
-
 const Home = () => {
   return (
     <main>
-      <h1 className="text-10">Hello world</h1>
+      <h1 className="">Hello world</h1>
     </main>
   );
 }
