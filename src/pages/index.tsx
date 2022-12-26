@@ -3,14 +3,9 @@ import Head from "next/head";
 
 const Home = () => {
   return (
-    <>
-      <Head>
-        <title>SushiScript</title>
-      </Head>
-      <main>
-
-      </main>
-    </>
+    <main>
+      <h1 className="text-10">Hello world</h1>
+    </main>
   );
 }
 
