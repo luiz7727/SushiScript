@@ -1,11 +1,18 @@
 import Head from "next/head";
 
+import { useState } from "react";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import AdminActions from "../components/AdminActions";
+import AdminActionsButton from "../components/AdminActionsButton";
+import AddProductForm from "../components/AddProductForm";
 
 
 const Admin = () => {
+
+  const [showAddProductForm, setShowAddProductForm] = useState<boolean>(false);
+
+
   return (
     <>
 
@@ -22,6 +29,11 @@ const Admin = () => {
       <Header />
 
       <main className="container-padding">
+
+        {showAddProductForm &&
+          <AddProductForm setState={setShowAddProductForm}/>
+        }
+
         <section className="max-width mt-20">
 
           <div className="max-w-lg mx-auto bg-[#e6e6e6] py-16 px-4 rounded-2xl">
@@ -30,9 +42,9 @@ const Admin = () => {
             </div>
 
             <div className="max-w-[400px] mx-auto flex flex-col items-center">
-              <AdminActions href="/AddProduct" label="Add produto" />
-              <AdminActions href="/EditProduct" label="Editar produto" />
-              <AdminActions href="/AddMenu" label="Adicionar cardápio" />
+              <AdminActionsButton label="Add produto" onClick={() => setShowAddProductForm(true)} />
+              <AdminActionsButton label="Editar produto" onClick={() => setShowAddProductForm(true)} />
+              <AdminActionsButton label="Adicionar cardápio" onClick={() => setShowAddProductForm(true)} />
             </div>
           </div>
 
